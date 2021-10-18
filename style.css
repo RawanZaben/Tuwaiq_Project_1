@@ -1,0 +1,45 @@
+body{
+  background-image: url("b.jpg");
+
+}
+
+#imgHO {
+width: 270px;
+}
+#mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* column-gap: 10px;
+  row-gap: 10px; */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.secondryContainer {
+  border: 1px solid #095d50;
+  text-align: center;
+}
+
+#imgg {
+  margin: 20px;
+  padding: 20px;
+ width: 380px;
+ border-radius: 40%;
+
+display: flex;
+margin: auto;
+}
+
+
+/* we made the page responsive by changing the grid-template-columns from having 3 columns to 2 cloumns only when the screen size go below 600px  */
+@media (max-width: 600px) {
+  #mainContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* we made the page responsive by changing the grid-template-columns from having 2 columns to 1 cloumn1 only when the screen size go below 400px  */
+@media (max-width: 400px) {
+  #mainContainer {
+    grid-template-columns: 1fr;
+  }
+}
