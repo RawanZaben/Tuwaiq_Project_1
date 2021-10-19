@@ -1,45 +1,43 @@
 body{
   background-image: url("b.jpg");
-
 }
-
+h2{
+  color: #095d50;
+}
 #imgHO {
 width: 270px;
 }
 #mainContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* column-gap: 10px;
-  row-gap: 10px; */
-  gap: 10px;
-  margin-bottom: 20px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 13px;
+  padding: 40px;
+
 }
 
-.secondryContainer {
-  border: 1px solid #095d50;
-  text-align: center;
+a {
+  color: #095d50;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgba(255, 255, 255, 0.397);
+}
+.divf {
+  color: #095d50;
+  border: 0px solid #373838;
+  background-color: #2b2c2c1f;
+}
+.divf:hover {
+  box-shadow: 0px 0px 12px #095d50;
 }
 
 #imgg {
   margin: 20px;
   padding: 20px;
- width: 380px;
- border-radius: 40%;
-
-display: flex;
-margin: auto;
+ width: 360px;
+ border-radius: 27%;
 }
-
-
-/* we made the page responsive by changing the grid-template-columns from having 3 columns to 2 cloumns only when the screen size go below 600px  */
-@media (max-width: 600px) {
-  #mainContainer {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-/* we made the page responsive by changing the grid-template-columns from having 2 columns to 1 cloumn1 only when the screen size go below 400px  */
-@media (max-width: 400px) {
-  #mainContainer {
-    grid-template-columns: 1fr;
-  }
+.but:hover {
+  box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
