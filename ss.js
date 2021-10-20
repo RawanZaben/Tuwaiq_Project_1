@@ -5,16 +5,18 @@ const imgInput = $("#img");
 const linkInput = $("#link");
 const divone = $("#div1")
 
-// Hide and show  botton 
-divone.hide()
-function hideHandler() {
+// Hide and show  botton   
+divone.hide()       
+function showHandler() {           // "يظهر بوتن "أضافه منتج   
+  divone.show()
+}
+function hideHandler() {              // "يخفي بوتن "أضافه منتج
     divone.hide()
 }
- function showHandler() {
-    divone.show()
- }
-// array of objects تمثل لي قاعده البايانات  
-const sarray = [
+
+// array of objects    لحفظ البيانات وعرض البيانات عند فتح الموقع
+
+const sarray = JSON.parse(localStorage.getItem("localAdd")) || [   // اذا كان في بيانات في لوكل يطلع  و اذا مافي يطلع مصفوفه  
     {id:0, Name: " كتاب فن اللامبالاة", img: "https://2u.pw/IDd3S", link: "https://2u.pw/RRq3X" },
     {id:1, Name: "كتاب الرقص مع الحياه ", img: "https://2u.pw/tM6ZN", link: "hhttps://2u.pw/o44Pf" },  
   { id:2,Name: " كتاب نظرية الفستق", img: "https://2u.pw/yHtqM", link: "https://2u.pw/lkW7f" },
@@ -27,7 +29,9 @@ const sarray = [
 
 ];
 
-// fot loop to array of objects
+// fot loop to array of objects renderArr and 
+//  function renderEr  , انشاء عناصر 
+
 function renderArr(array) {
   for (let i = 0; i < array.length; i++) {
     const div =
@@ -35,22 +39,20 @@ function renderArr(array) {
         <img id="imgg"src=${array[i].img} alt="Flowers in Chania">
         <h1>${array[i].Name}</h1>
         <a href=${array[i].link}> رابط المنتج </a><br><br>
-        <button class='deleteButton' id=""+${i}  onclick="dele(${i})"> حذف </button>
+        <button class="but" id=""+${i}  onclick="dele(${i})"> حذف </button>
         <br><br>
        </div>`);
-
-      //  $('#'+i).click(function(){ 
-      //    console.log("hanan")
-      //   dele(array[i].id)  
-      // });
-     
     mainContainer.append(div);
   }
+  localStorage.setItem("localAdd", JSON.stringify(sarray));        // يدخل االمصفوفه في لوكل
+  
 
 }
 renderArr(sarray);
 
+
 // اسمح ليوز يدخل البيانات وتطلع 
+
 function add() {
   const newadd= {
     Name: nameInput.val(),
@@ -62,16 +64,10 @@ function add() {
   mainContainer.html("");
   renderArr(sarray);
 }
-// حذف 
 
+// االحذف  
 function dele(id){
-  //$(`${array[i].id}`).remove()
-  console.log(id,"iddddd" )
-  //const index= sarray.findIndex(x => x.id == id);
   sarray.splice(id,1)
   mainContainer.html("")
   renderArr(sarray);
-
-
-
 }

@@ -1,4 +1,6 @@
 body{
+  font-family: cursive;
+
   background-image: url("b.jpg");
 }
 h2{
@@ -40,4 +42,16 @@ a:hover {
 }
 .but:hover {
   box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/* we made the page responsive by changing the grid-template-columns from having 3 columns to 2 cloumns only when the screen size go below 600px  */
+@media (max-width: 600px) {
+  #mainContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* we made the page responsive by changing the grid-template-columns from having 2 columns to 1 cloumn1 only when the screen size go below 400px  */
+@media (max-width: 400px) {
+  #mainContainer {
+    grid-template-columns: 1fr;
+  }
 }
